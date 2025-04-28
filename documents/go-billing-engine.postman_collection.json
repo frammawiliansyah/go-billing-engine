@@ -1,0 +1,1268 @@
+{
+	"info": {
+		"_postman_id": "c34efdd2-ce5b-4177-855b-09f9b88f01fe",
+		"name": "Go Billing Engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25390059",
+		"_collection_link": "https://fa-team-6723.postman.co/workspace/FA-Team~cb22acdb-ba8d-4ed7-82fe-a45e50612640/collection/25390059-c34efdd2-ce5b-4177-855b-09f9b88f01fe?action=share&source=collection_link&creator=25390059"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Framma Second\",\r\n    \"email_address\": \"framma@gmail.com\",\r\n    \"password\": \"strongpassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/register",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register : success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"full_name\": \"Framma Akbar\",\r\n    \"email_address\": \"framma@gmail.com\",\r\n    \"password\": \"strongpassword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 15:55:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\"\n}"
+						},
+						{
+							"name": "register : failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"full_name\": \"Framma Second\",\r\n    \"email_address\": \"framma@gmail.com\",\r\n    \"password\": \"strongpassword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 15:56:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Email is already registered\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email_address\": \"framma@gmail.com\",\r\n    \"password\": \"weekpassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login : success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_address\": \"framma@gmail.com\",\r\n    \"password\": \"strongpassword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/login",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 15:57:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDU5NDIyNDUsInVzZXJfaWQiOjN9.XXJ9uWeQ1FyNWWwuHFq154ASPDg0qHwLDTu0Vd7tLmU\",\n    \"user\": {\n        \"email_address\": \"framma@gmail.com\",\n        \"full_name\": \"FRAMMA AKBAR\",\n        \"id\": 3\n    }\n}"
+						},
+						{
+							"name": "login : failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_address\": \"framma@gmail.com\",\r\n    \"password\": \"weekpassword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/login",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 15:57:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid email or password\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "loan",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/loans",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all : success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{localhost}}/loans",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 15:58:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "406"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"limit\": 10,\n    \"loans\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"loan_code\": \"LOA-20250428-144\",\n            \"loan_status\": \"ACTIVE\",\n            \"loan_amount\": 5000000,\n            \"loan_length\": 50,\n            \"ntf_total\": 5000000,\n            \"created_at\": \"2025-04-28 21:45:15\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 2,\n            \"loan_code\": \"LOA-20250428-143\",\n            \"loan_status\": \"ACTIVE\",\n            \"loan_amount\": 200000,\n            \"loan_length\": 10,\n            \"ntf_total\": 200000,\n            \"created_at\": \"2025-03-28 21:45:49\"\n        }\n    ],\n    \"message\": \"Loans fetched successfully\",\n    \"page\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "get detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"loan_amount\": 5000000,\n    \"loan_length\": 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/loans/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"loans",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get detail : success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"loan_amount\": 5000000,\n    \"loan_length\": 12\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/loans/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 15:59:40 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"loan\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"loan_code\": \"LOA-20250428-144\",\n        \"loan_status\": \"ACTIVE\",\n        \"loan_amount\": 5000000,\n        \"loan_length\": 50,\n        \"ntf_total\": 5000000,\n        \"admin_total\": 0,\n        \"created_at\": \"2025-04-28T21:45:15.799676+07:00\",\n        \"updated_at\": \"2025-04-28T21:45:15.799676+07:00\",\n        \"installments\": [\n            {\n                \"sequence\": 1,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 961.54,\n                \"principal_amount\": 99529.62,\n                \"outstanding_amount\": 4900470.38,\n                \"due_date\": \"2025-05-05T21:45:15.802944+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 2,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 942.4,\n                \"principal_amount\": 99548.76,\n                \"outstanding_amount\": 4800921.63,\n                \"due_date\": \"2025-05-12T21:45:15.804+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 3,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 923.25,\n                \"principal_amount\": 99567.9,\n                \"outstanding_amount\": 4701353.73,\n                \"due_date\": \"2025-05-19T21:45:15.804734+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 4,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 904.11,\n                \"principal_amount\": 99587.05,\n                \"outstanding_amount\": 4601766.68,\n                \"due_date\": \"2025-05-26T21:45:15.805536+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 5,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 884.96,\n                \"principal_amount\": 99606.2,\n                \"outstanding_amount\": 4502160.48,\n                \"due_date\": \"2025-06-02T21:45:15.806604+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 6,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 865.8,\n                \"principal_amount\": 99625.35,\n                \"outstanding_amount\": 4402535.12,\n                \"due_date\": \"2025-06-09T21:45:15.807733+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 7,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 846.64,\n                \"principal_amount\": 99644.51,\n                \"outstanding_amount\": 4302890.61,\n                \"due_date\": \"2025-06-16T21:45:15.808451+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 8,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 827.48,\n                \"principal_amount\": 99663.68,\n                \"outstanding_amount\": 4203226.94,\n                \"due_date\": \"2025-06-23T21:45:15.809071+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 9,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 808.31,\n                \"principal_amount\": 99682.84,\n                \"outstanding_amount\": 4103544.09,\n                \"due_date\": \"2025-06-30T21:45:15.809956+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 10,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 789.14,\n                \"principal_amount\": 99702.01,\n                \"outstanding_amount\": 4003842.08,\n                \"due_date\": \"2025-07-07T21:45:15.810627+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 11,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 769.97,\n                \"principal_amount\": 99721.19,\n                \"outstanding_amount\": 3904120.9,\n                \"due_date\": \"2025-07-14T21:45:15.81133+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 12,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 750.79,\n                \"principal_amount\": 99740.36,\n                \"outstanding_amount\": 3804380.53,\n                \"due_date\": \"2025-07-21T21:45:15.812036+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 13,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 731.61,\n                \"principal_amount\": 99759.54,\n                \"outstanding_amount\": 3704620.99,\n                \"due_date\": \"2025-07-28T21:45:15.812835+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 14,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 712.43,\n                \"principal_amount\": 99778.73,\n                \"outstanding_amount\": 3604842.26,\n                \"due_date\": \"2025-08-04T21:45:15.813519+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 15,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 693.24,\n                \"principal_amount\": 99797.92,\n                \"outstanding_amount\": 3505044.35,\n                \"due_date\": \"2025-08-11T21:45:15.814166+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 16,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 674.05,\n                \"principal_amount\": 99817.11,\n                \"outstanding_amount\": 3405227.24,\n                \"due_date\": \"2025-08-18T21:45:15.814829+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 17,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 654.85,\n                \"principal_amount\": 99836.3,\n                \"outstanding_amount\": 3305390.94,\n                \"due_date\": \"2025-08-25T21:45:15.815563+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 18,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 635.65,\n                \"principal_amount\": 99855.5,\n                \"outstanding_amount\": 3205535.43,\n                \"due_date\": \"2025-09-01T21:45:15.816308+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 19,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 616.45,\n                \"principal_amount\": 99874.71,\n                \"outstanding_amount\": 3105660.73,\n                \"due_date\": \"2025-09-08T21:45:15.81697+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 20,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 597.24,\n                \"principal_amount\": 99893.91,\n                \"outstanding_amount\": 3005766.82,\n                \"due_date\": \"2025-09-15T21:45:15.817615+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 21,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 578.03,\n                \"principal_amount\": 99913.12,\n                \"outstanding_amount\": 2905853.69,\n                \"due_date\": \"2025-09-22T21:45:15.818242+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 22,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 558.82,\n                \"principal_amount\": 99932.34,\n                \"outstanding_amount\": 2805921.36,\n                \"due_date\": \"2025-09-29T21:45:15.818875+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 23,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 539.6,\n                \"principal_amount\": 99951.55,\n                \"outstanding_amount\": 2705969.8,\n                \"due_date\": \"2025-10-06T21:45:15.819518+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 24,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 520.38,\n                \"principal_amount\": 99970.78,\n                \"outstanding_amount\": 2605999.03,\n                \"due_date\": \"2025-10-13T21:45:15.820278+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 25,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 501.15,\n                \"principal_amount\": 99990,\n                \"outstanding_amount\": 2506009.03,\n                \"due_date\": \"2025-10-20T21:45:15.820963+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 26,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 481.92,\n                \"principal_amount\": 100009.23,\n                \"outstanding_amount\": 2405999.8,\n                \"due_date\": \"2025-10-27T21:45:15.821608+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 27,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 462.69,\n                \"principal_amount\": 100028.46,\n                \"outstanding_amount\": 2305971.33,\n                \"due_date\": \"2025-11-03T21:45:15.822251+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 28,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 443.46,\n                \"principal_amount\": 100047.7,\n                \"outstanding_amount\": 2205923.64,\n                \"due_date\": \"2025-11-10T21:45:15.82295+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 29,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 424.22,\n                \"principal_amount\": 100066.94,\n                \"outstanding_amount\": 2105856.7,\n                \"due_date\": \"2025-11-17T21:45:15.823839+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 30,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 404.97,\n                \"principal_amount\": 100086.18,\n                \"outstanding_amount\": 2005770.51,\n                \"due_date\": \"2025-11-24T21:45:15.824585+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 31,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 385.73,\n                \"principal_amount\": 100105.43,\n                \"outstanding_amount\": 1905665.08,\n                \"due_date\": \"2025-12-01T21:45:15.8252+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 32,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 366.47,\n                \"principal_amount\": 100124.68,\n                \"outstanding_amount\": 1805540.4,\n                \"due_date\": \"2025-12-08T21:45:15.825871+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 33,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 347.22,\n                \"principal_amount\": 100143.94,\n                \"outstanding_amount\": 1705396.47,\n                \"due_date\": \"2025-12-15T21:45:15.826492+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 34,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 327.96,\n                \"principal_amount\": 100163.19,\n                \"outstanding_amount\": 1605233.27,\n                \"due_date\": \"2025-12-22T21:45:15.827159+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 35,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 308.7,\n                \"principal_amount\": 100182.46,\n                \"outstanding_amount\": 1505050.82,\n                \"due_date\": \"2025-12-29T21:45:15.827895+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 36,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 289.43,\n                \"principal_amount\": 100201.72,\n                \"outstanding_amount\": 1404849.1,\n                \"due_date\": \"2026-01-05T21:45:15.828738+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 37,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 270.16,\n                \"principal_amount\": 100220.99,\n                \"outstanding_amount\": 1304628.11,\n                \"due_date\": \"2026-01-12T21:45:15.829563+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 38,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 250.89,\n                \"principal_amount\": 100240.26,\n                \"outstanding_amount\": 1204387.84,\n                \"due_date\": \"2026-01-19T21:45:15.830836+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 39,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 231.61,\n                \"principal_amount\": 100259.54,\n                \"outstanding_amount\": 1104128.3,\n                \"due_date\": \"2026-01-26T21:45:15.831649+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 40,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 212.33,\n                \"principal_amount\": 100278.82,\n                \"outstanding_amount\": 1003849.48,\n                \"due_date\": \"2026-02-02T21:45:15.832327+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 41,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 193.05,\n                \"principal_amount\": 100298.11,\n                \"outstanding_amount\": 903551.37,\n                \"due_date\": \"2026-02-09T21:45:15.833071+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 42,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 173.76,\n                \"principal_amount\": 100317.39,\n                \"outstanding_amount\": 803233.98,\n                \"due_date\": \"2026-02-16T21:45:15.833814+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 43,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 154.47,\n                \"principal_amount\": 100336.69,\n                \"outstanding_amount\": 702897.29,\n                \"due_date\": \"2026-02-23T21:45:15.834457+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 44,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 135.17,\n                \"principal_amount\": 100355.98,\n                \"outstanding_amount\": 602541.31,\n                \"due_date\": \"2026-03-02T21:45:15.835049+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 45,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 115.87,\n                \"principal_amount\": 100375.28,\n                \"outstanding_amount\": 502166.03,\n                \"due_date\": \"2026-03-09T21:45:15.835986+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 46,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 96.57,\n                \"principal_amount\": 100394.58,\n                \"outstanding_amount\": 401771.44,\n                \"due_date\": \"2026-03-16T21:45:15.83696+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 47,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 77.26,\n                \"principal_amount\": 100413.89,\n                \"outstanding_amount\": 301357.55,\n                \"due_date\": \"2026-03-23T21:45:15.83772+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 48,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 57.95,\n                \"principal_amount\": 100433.2,\n                \"outstanding_amount\": 200924.35,\n                \"due_date\": \"2026-03-30T21:45:15.838352+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 49,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 38.64,\n                \"principal_amount\": 100452.52,\n                \"outstanding_amount\": 100471.83,\n                \"due_date\": \"2026-04-06T21:45:15.839015+07:00\",\n                \"paid_status\": \"PENDING\"\n            },\n            {\n                \"sequence\": 50,\n                \"installment_amount\": 100491.15,\n                \"interest_amount\": 19.32,\n                \"principal_amount\": 100471.83,\n                \"outstanding_amount\": 0,\n                \"due_date\": \"2026-04-13T21:45:15.839647+07:00\",\n                \"paid_status\": \"PENDING\"\n            }\n        ]\n    },\n    \"message\": \"Loan detail fetched successfully\"\n}"
+						},
+						{
+							"name": "get detail : failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"loan_amount\": 5000000,\n    \"loan_length\": 12\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/loans/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:00:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Loan not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get oustanding",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/loans/oustanding/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"loans",
+								"oustanding",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get oustanding : success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{localhost}}/loans/oustanding/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										"oustanding",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:00:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Outstanding fetched successfully\",\n    \"outstanding_information\": {\n        \"due_date\": \"2025-05-05T21:45:15.802944+07:00\",\n        \"is_delinquent\": false,\n        \"outstanding_installment\": 5014557.7,\n        \"outstanding_interest\": 24462.03,\n        \"outstanding_principal\": 4990095.67\n    }\n}"
+						},
+						{
+							"name": "get oustanding : failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{localhost}}/loans/oustanding/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										"oustanding",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:00:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Loan not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get delinquent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/loans/delinquent/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"loans",
+								"delinquent",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get delinquent : success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{localhost}}/loans/delinquent/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										"delinquent",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:01:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"minimum_payment_required\": 0,\n        \"overdue_installments\": null\n    },\n    \"message\": \"Delinquent installments fetched successfully\"\n}"
+						},
+						{
+							"name": "get delinquent : failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{localhost}}/loans/delinquent/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										"delinquent",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:01:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Loan not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create loan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"loan_amount\": 5000000,\n    \"loan_length\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/loans",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"loans"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create loan : success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"loan_amount\": 5000000,\n    \"loan_length\": 50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/loans",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:03:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "636"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"loan\": {\n        \"id\": 3,\n        \"user_id\": 2,\n        \"user\": {\n            \"id\": 2,\n            \"full_name\": \"DELINQUENT USER\",\n            \"email_address\": \"delinquent@gmail.com\",\n            \"created_at\": \"2025-04-28T21:44:10.160953+07:00\",\n            \"updated_at\": \"2025-04-28T21:44:10.160953+07:00\"\n        },\n        \"pricing_id\": 1,\n        \"pricing\": {\n            \"id\": 1,\n            \"interest_rate\": 1,\n            \"admin_rate\": 0,\n            \"created_at\": \"2025-04-28T21:44:59.423275+07:00\",\n            \"updated_at\": \"2025-04-28T21:44:59.423276+07:00\"\n        },\n        \"loan_code\": \"LOA-20250428-122\",\n        \"loan_status\": \"ACTIVE\",\n        \"loan_amount\": 5000000,\n        \"loan_length\": 50,\n        \"ntf_total\": 5000000,\n        \"admin_total\": 0,\n        \"created_at\": \"2025-04-28T23:03:09.346761+07:00\",\n        \"updated_at\": \"2025-04-28T23:03:09.346761+07:00\"\n    },\n    \"message\": \"Loan created successfully\"\n}"
+						},
+						{
+							"name": "create loan : failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"loan_amount\": 200000,\n    \"loan_length\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/loans",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:01:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"User has an active loan, cannot create new loan\"\n}"
+						}
+					]
+				},
+				{
+					"name": "make payment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_amount\": 1000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/loans/payment/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"loans",
+								"payment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "make payment : success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment_amount\": 1000000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/loans/payment/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										"payment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:03:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Payment processed successfully\",\n    \"payment\": {\n        \"id\": 2,\n        \"user_id\": 2,\n        \"loan_id\": 3,\n        \"payment_code\": \"PAY-20250428-667\",\n        \"payment_amount\": 1000000,\n        \"created_at\": \"2025-04-28T23:03:53.59970846+07:00\",\n        \"updated_at\": \"2025-04-28T23:03:53.599708495+07:00\"\n    }\n}"
+						},
+						{
+							"name": "make payment : failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{localhost}}/loans/payment/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"loans",
+										"payment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:04:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"EOF\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "pricing",
+			"item": [
+				{
+					"name": "upsert pricing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interest_rate\": 1.0,\n    \"admin_rate\": 0.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/pricings/upsert",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"pricings",
+								"upsert"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "upsert pricing : success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"interest_rate\": 1.0,\n    \"admin_rate\": 1.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/pricings/upsert",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"pricings",
+										"upsert"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:04:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Pricing created successfully\",\n    \"pricing\": {\n        \"id\": 3,\n        \"interest_rate\": 1,\n        \"admin_rate\": 1,\n        \"created_at\": \"2025-04-28T23:04:37.165824129+07:00\",\n        \"updated_at\": \"2025-04-28T23:04:37.165824185+07:00\"\n    }\n}"
+						},
+						{
+							"name": "upsert pricing : failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"interest_rate\": 1.0,\n    \"admin_rate\": 0.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/pricings/upsert",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"pricings",
+										"upsert"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Apr 2025 16:05:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Key: 'AdminRate' Error:Field validation for 'AdminRate' failed on the 'required' tag\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
