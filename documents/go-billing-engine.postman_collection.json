@@ -192,7 +192,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDU5NDIyNDUsInVzZXJfaWQiOjN9.XXJ9uWeQ1FyNWWwuHFq154ASPDg0qHwLDTu0Vd7tLmU\",\n    \"user\": {\n        \"email_address\": \"framma@gmail.com\",\n        \"full_name\": \"FRAMMA AKBAR\",\n        \"id\": 3\n    }\n}"
+							"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"\",\n    \"user\": {\n        \"email_address\": \"framma@gmail.com\",\n        \"full_name\": \"FRAMMA AKBAR\",\n        \"id\": 3\n    }\n}"
 						},
 						{
 							"name": "login : failed",
