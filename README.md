@@ -260,6 +260,8 @@ curl --location 'http://localhost:8080/loans/delinquent/0' \
 
 ## Entity Relationship Diagram (ERD)
 
+[Download ERD (.drawio)](https://github.com/frammawiliansyah/go-billing-engine/blob/master/documents/go-billing-engine-diagram.drawio)
+
 ![ERD Diagram](documents/go-billing-engine-diagram.png)
 
 ## License
