@@ -258,6 +258,9 @@ curl --location 'http://localhost:8080/loans/delinquent/0' \
     └── go.sum
 ```
 
+## Entity Relationship Diagram (ERD)
+
+![ERD Diagram](documents/go-billing-engine-diagram.png)
 
 ## License
 
